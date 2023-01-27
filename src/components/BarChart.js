@@ -13,7 +13,7 @@ function BarChart() {
     };
 
     return (
-        <div style={{ width: '800px', height: '500px', margin: '0 auto' }}>
+        <div style={{ width: '500px', height: '500px', margin: '0 auto' }}>
             <ResponsiveBar
                 /**
                  * chart에 사용될 데이터
