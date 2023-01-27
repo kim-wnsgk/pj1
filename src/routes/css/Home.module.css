@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+}
+
+.banner {
+    height: 100px;
+    background-color: #eeeeee;
+}
+
+.title {
+    position: absolute;
+    left: 0;
+    color: white;
+    width: 250px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: rgb(134, 134, 255);
+}
+
+.topBar {
+    display: flex;
+    float: right;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.search {
+    flex: 5;
+    width: 500px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.alert {
+    text-align: center;
+}
+
+.user {
+    margin: auto;
+    text-align: center;
+}
+
+.container {
+    height: 800px;
+}
+
+.menuBar {
+    width: 250px;
+    height: 100%;
+    background-color: #b9b9b9;
+    float: left;
+}
+
+.menuLists {
+    padding-left: 0;
+}
+
+.menuLists>li {
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    list-style: none;
+    height: 100px;
+    line-height: 100px;
+    /*box-shadow: 0px 3px 5px gray;*/
+    text-align: center;
+    display: block;
+}
+
+.menuInput {
+    display: none;
+}
+
+.overviewList {
+    display: none;
+}
+
+.overviewTg:checked+.overviewList {
+    display: block;
+}
+
+.contents {
+    display: flex;
+}
+
+.chart {
+    flex: 1;
+}
