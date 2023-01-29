@@ -1,0 +1,29 @@
+[
+    {
+        "Name": "k8s-node1",
+        "Version": "v1.20.1",
+        "Address": "172.25.235.99",
+        "osImage": "Ubuntu 20.04.5 LTS",
+        "Ready": "True",
+        "usageCpu": 2,
+        "UsageMemory": 41
+    },
+    {
+        "Name": "k8s-node2",
+        "Version": "v1.20.1",
+        "Address": "172.25.235.116",
+        "osImage": "Ubuntu 20.04.5 LTS",
+        "Ready": "True",
+        "usageCpu": 3,
+        "UsageMemory": 26
+    },
+    {
+        "Name": "master.hwan.com",
+        "Version": "v1.20.1",
+        "Address": "172.25.235.126",
+        "osImage": "Ubuntu 20.04.5 LTS",
+        "Ready": "True",
+        "usageCpu": 6,
+        "UsageMemory": 28
+    }
+]

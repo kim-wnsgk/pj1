@@ -4,7 +4,8 @@ body {
 
 .banner {
     height: 100px;
-    background-color: #eeeeee;
+    background-color: #181818;
+    color: white;
 }
 
 .title {
@@ -16,13 +17,11 @@ body {
     text-align: center;
     font-size: 2em;
     font-weight: bold;
-    background-color: rgb(134, 134, 255);
 }
 
 .topBar {
     display: flex;
     float: right;
-    width: 50%;
     margin-right: 20px;
 }
 
@@ -48,24 +47,22 @@ body {
     width: 100%;
     height: 70px;
     line-height: 50px;
-    background-color: rgba(85, 85, 226, 0.404);
     padding: 10px;
     box-sizing: border-box;
     display: flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .menuButton {
     margin-right: 20px;
 }
 
-.menuBtn:checked+.menubar {
-    width: 250px;
-}
+
 
 .menuName {
-    color: white;
     font-size: 1.5em;
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .container {
@@ -76,7 +73,7 @@ body {
 .menuBar {
     width: 250px;
     height: 100%;
-    background-color: #b9b9b9;
+    background-color: #464646;
     float: left;
 }
 
@@ -86,10 +83,10 @@ body {
 
 .menuList>li {
     color: white;
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 1.5em;
+    font-weight: bold;
     list-style: none;
-    line-height: 100px;
+    line-height: 80px;
     text-align: center;
     cursor: pointer;
 }
@@ -102,7 +99,7 @@ body {
     display: block;
 }
 
-/* 껐다켰다 */
+/* 메뉴바 */
 .smallMenu {
     height: 0;
     transition-duration: 1s;
@@ -114,11 +111,13 @@ body {
     transition-duration: 1s;
 }
 
-.menuList>li:hover {
-    color: black;
+.smallMenu>li:hover {
+    text-decoration: underline;
 }
 
-/* 껐다켰다 끝 */
+.menuList li:hover {
+    color: rgb(209, 209, 255);
+}
 
 .smallMenu>li {
     font-size: 0.7em;

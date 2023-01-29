@@ -4,6 +4,8 @@ import { MdExpandMore } from "react-icons/md"
 import { useSelector, useDispatch } from 'react-redux';
 import { changeAction } from '../store';
 
+import data from '../data/data.json'
+
 function Nodes() {
 
     const arr = useSelector(state => state)
@@ -12,6 +14,8 @@ function Nodes() {
     const changeMenu = (value) => {
         dispatch(changeAction(value));
     }
+
+    console.log(data);
 
     return (
         <div className={styles.container}>
@@ -23,76 +27,15 @@ function Nodes() {
                 <div className={styles.ip}>IP</div>
             </div>
             <hr />
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} onClick={() => changeMenu(['Nodes', 'detail'])} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.name}>Node-01</div>
-                <div className={styles.cpu}>20</div>
-                <div className={styles.ram}>35</div>
-                <div className={styles.disk}>35</div>
-                <div className={styles.ip}>127.0.0.1<MdExpandMore style={{ float: 'right' }} /></div>
-            </div>
+            {data.map((data) =>
+                <div className={styles.row}>
+                    <div className={styles.name}>{data.Name}</div>
+                    <div className={styles.cpu}>{data.usageCpu}</div>
+                    <div className={styles.ram}>{data.UsageMemory}</div>
+                    <div className={styles.disk}>NULL</div>
+                    <div className={styles.ip}>{data.Address}<MdExpandMore style={{ float: 'right' }} /></div>
+                </div>
+            )}
         </div>
     );
 }
