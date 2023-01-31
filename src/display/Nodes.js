@@ -2,7 +2,7 @@ import styles from "./css/Nodes.module.css"
 import { MdExpandMore } from "react-icons/md"
 
 import { useSelector, useDispatch } from 'react-redux';
-import { changeAction } from '../store';
+import { changeMenuAction } from '../store';
 
 import data from '../data/data.json'
 
@@ -12,7 +12,7 @@ function Nodes() {
     const dispatch = useDispatch();
 
     const changeMenu = (value) => {
-        dispatch(changeAction(value));
+        dispatch(changeMenuAction(value));
     }
 
     console.log(data);
@@ -33,7 +33,7 @@ function Nodes() {
                     <div className={styles.cpu}>{data.usageCpu}</div>
                     <div className={styles.ram}>{data.UsageMemory}</div>
                     <div className={styles.disk}>NULL</div>
-                    <div className={styles.ip}>{data.Address}<MdExpandMore style={{ float: 'right' }} /></div>
+                    <div className={styles.ip}>{data.Address}<MdExpandMore size="50px" style={{ float: 'right', cursor:'pointer' } } onClick={() => changeMenu(['Nodes', 'Detail'])} /></div>
                 </div>
             )}
         </div>

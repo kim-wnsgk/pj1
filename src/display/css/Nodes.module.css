@@ -9,10 +9,15 @@
     font-size: 2em;
     text-align: center;
     margin-top: 20px;
+    border-bottom: 1px dashed grey;
 }
-
 .row:first-child {
     font-weight: bold;
+    border-bottom: 0;
+}
+
+.row:last-child {
+    border-bottom: 0;
 }
 
 .name {

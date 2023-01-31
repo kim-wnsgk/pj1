@@ -6,19 +6,22 @@ import { AiOutlineMenu } from "react-icons/ai"
 
 import Summary from "../display/Summary"
 import Nodes from "../display/Nodes.js"
+import NodeDetail from "../display/NodeDetail"
 
 import { useEffect, useState } from "react"
 // import styled from "styled-components";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { changeAction } from '../store';
+import { changeMenuAction } from '../store';
 
 function Home() {
     const arr = useSelector(state => state)
     const dispatch = useDispatch();
 
+    console.log("arr = ", arr)
+
     const changeMenu = (value) => {
-        dispatch(changeAction(value));
+        dispatch(changeMenuAction(value));
     }
 
     // const [scroll, setScroll] = useState(`100px`);
@@ -81,7 +84,7 @@ function Home() {
                     onClick={() => { isopen ? setIsopen(false) : setIsopen(true) }}
                     style={{ cursor: 'pointer' }}
                 />
-                <div className={styles.menuName}>{arr.map((str) => (" > " + `${str}`))}</div>
+                <div className={styles.menuName}>{arr.menu.map((str) => (" > " + `${str}`))}</div>
             </div>
             <div className={styles.container} /*onWheel={handleOnWheel}*/>
                 {isopen ? (
@@ -124,8 +127,8 @@ function Home() {
                 ) : null}
 
                 <div className={styles.contents}>
-                    {arr.includes('Summary') ? <Summary /> : null}
-                    {arr.includes('Nodes') ? <Nodes /> : null}
+                    {arr.menu.includes('Summary') ? <Summary /> : null}
+                    {arr.menu.includes('Detail') ? <NodeDetail /> : arr.menu.includes('Nodes') ? <Nodes /> : null}
                 </div>
             </div>
         </div>

@@ -1,18 +1,29 @@
 import { createStore, legacy_createStore } from "redux";
 
-const initialState = ["Overview", "Summary"];
+const initialState = {
+    menu: ["Overview", "Summary"],
+    nodeData: {
+        name: "name",
+        usageCpu: 0,
+        UsageMemory: 1,
+        Address: '0.0.0.0'
+    }
+};
 
-export const changeAction = arr => {
+export const changeMenuAction = arr => {
     return {
         type: 'CHANGE',
-        arr
+        arr,
     };
 };
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CHANGE':
-            return action.arr;
+            return {
+                menu: action.arr,
+                //nodeData: store.getState().nodeData,
+            };
         default:
             return state;
     }
