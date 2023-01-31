@@ -4,8 +4,6 @@ import { RxDividerVertical } from "react-icons/rx"
 import { FaRegUser } from "react-icons/fa"
 import { AiOutlineMenu } from "react-icons/ai"
 
-import { Link } from "react-router-dom"
-
 import Summary from "../display/Summary"
 import Nodes from "../display/Nodes.js"
 

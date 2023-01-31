@@ -1,5 +1,7 @@
 import { createStore, legacy_createStore } from "redux";
 
+const initialState = ["Overview", "Summary"];
+
 export const changeAction = arr => {
     return {
         type: 'CHANGE',
@@ -7,7 +9,7 @@ export const changeAction = arr => {
     };
 };
 
-export const reducer = (state = ["Overview", "Summary"], action) => {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CHANGE':
             return action.arr;
