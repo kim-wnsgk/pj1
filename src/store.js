@@ -10,10 +10,21 @@ const initialState = {
     }
 };
 
-export const changeMenuAction = arr => {
+export const changeMenuAction = menu => {
+    const nd = store.getState().nodeData;
     return {
         type: 'CHANGE',
-        arr,
+        menu,
+        nd,
+    };
+};
+
+export const changeNodeAction = nd => {
+    const menu = store.getState().menu;
+    return {
+        type: 'CHANGE',
+        menu,
+        nd,
     };
 };
 
@@ -21,8 +32,8 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CHANGE':
             return {
-                menu: action.arr,
-                //nodeData: store.getState().nodeData,
+                menu: action.menu,
+                nodeData: action.nd,
             };
         default:
             return state;

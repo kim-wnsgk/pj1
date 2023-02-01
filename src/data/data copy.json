@@ -1,0 +1,56 @@
+[
+    {
+        "name": "k8s-node1",
+        "version": "v1.20.1",
+        "address": [
+            {
+                "type": "InternalIP",
+                "address": "172.25.235.99"
+            },
+            {
+                "type": "Hostname",
+                "address": "k8s-node1"
+            }
+        ],
+        "os-imasge": "Ubuntu 20.04.5 LTS",
+        "ready": "True",
+        "usageCpu": 2,
+        "usageMemory": 35
+    },
+    {
+        "name": "k8s-node2",
+        "version": "v1.20.1",
+        "address": [
+            {
+                "type": "InternalIP",
+                "address": "172.25.235.116"
+            },
+            {
+                "type": "Hostname",
+                "address": "k8s-node2"
+            }
+        ],
+        "os-imasge": "Ubuntu 20.04.5 LTS",
+        "ready": "True",
+        "usageCpu": 4,
+        "usageMemory": 37
+    },
+    {
+        "name": "master.hwan.com",
+        "version": "v1.20.1",
+        "address": [
+            {
+                "type": "InternalIP",
+                "address": "172.25.235.126"
+            },
+            {
+                "type": "Hostname",
+                "address": "master.hwan.com"
+            }
+        ],
+        "os-imasge": "Ubuntu 20.04.5 LTS",
+        "ready": "True",
+        "usageCpu": 7,
+        "usageMemory": 29
+    }
+]

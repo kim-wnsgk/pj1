@@ -1,20 +1,19 @@
-import styles from "./css/Home.module.css"
+import styles from "./css/Banner.module.css"
 import { IoIosNotifications } from "react-icons/io"
 import { RxDividerVertical } from "react-icons/rx"
 import { FaRegUser } from "react-icons/fa"
 import { AiOutlineMenu } from "react-icons/ai"
 
-import Summary from "../display/Summary"
 import NodesDisplay from "../display/NodesDisplay.js"
-import NodeDetail from "../display/NodeDetail"
 
 import { useEffect, useState } from "react"
 // import styled from "styled-components";
 
 import { useSelector, useDispatch } from 'react-redux';
 import { changeMenuAction } from '../store';
+import { Link } from "react-router-dom"
 
-function Home() {
+function Nodes() {
     const arr = useSelector(state => state)
     const dispatch = useDispatch();
 
@@ -31,33 +30,12 @@ function Home() {
         setText(txt.target.value);
     }
 
-    // const StyledBanner = styled.div`
-    //     margin: 0;
-    //     border: 0;
-    //     width:100%;
-    //     height:${scroll};
-    //     transition-duration: 1s;
-    //     overflow:hidden;
-    // `;
-
-    // const handleOnWheel = (e) => {
-    //     if (e.nativeEvent.wheelDelta > 0) {
-    //         // scroll up event
-    //         console.log('scroll up');
-    //         //setScroll(`100px`);
-    //     } else {
-    //         // scroll down event 
-    //         console.log('scroll down');
-    //         //setScroll(`0px`)
-    //     }
-    // }
-
     return (
         <div>
             {/* <StyledBanner> */}
             <div className={styles.banner}>
                 <div className={styles.title}>
-                    <img alt="title" src="assets/img/logo.png" />
+                    <Link to="/"><img alt="title" src="assets/img/logo.png" /></Link>
                 </div>
                 <div className={styles.topBar}>
                     <input className={styles.search}
@@ -91,7 +69,7 @@ function Home() {
                             <li>
                                 <div>Overview</div>
                                 <ul className={styles.smallMenu}>
-                                    <li onClick={() => changeMenu(["Overview", "Summary"])}>Summary</li>
+                                    <li onClick={() => changeMenu(["Overview", "Summary"])}><Link to="/overview/summary">Summary</Link></li>
                                     <li onClick={() => changeMenu(["Overview", "Custom view"])}>Custom view</li>
                                 </ul>
                             </li>
@@ -125,13 +103,11 @@ function Home() {
                 ) : null}
 
                 <div className={styles.contents}>
-                    {arr.menu.includes('Summary') ? <Summary /> : null}
-                    {arr.menu.includes('Detail') ? <NodeDetail /> : arr.menu.includes('Nodes') ? <NodesDisplay /> : null}
+                    <NodesDisplay />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Home;
-
+export default Nodes;

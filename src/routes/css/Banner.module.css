@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+}
+
+.banner {
+    height: 100px;
+    background-color: #181818;
+    color: white;
+}
+
+.title {
+    position: absolute;
+    color: white;
+    width: 250px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.topBar {
+    display: flex;
+    float: right;
+    margin-right: 20px;
+}
+
+.search {
+    flex: 5;
+    width: 500px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.alert {
+    text-align: center;
+}
+
+.user {
+    margin: auto;
+    text-align: center;
+}
+
+.viewer {
+    width: 100%;
+    height: 70px;
+    line-height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.menuButton {
+    margin-right: 20px;
+}
+
+
+
+.menuName {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.container {
+    height: 800px;
+    overflow: hidden;
+}
+
+.menuBar {
+    width: 250px;
+    height: 100%;
+    background-color: #464646;
+    float: left;
+}
+
+.menuList {
+    padding-left: 0;
+}
+
+.menuList>li {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    list-style: none;
+    line-height: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menuInput {
+    display: none;
+}
+
+.overview {
+    display: block;
+}
+
+/* 메뉴바 */
+.smallMenu {
+    height: 0;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+
+.menuList>li:hover .smallMenu {
+    height: 250px;
+    transition-duration: 1s;
+}
+
+.smallMenu>li:hover {
+    text-decoration: underline;
+}
+
+.menuList li:hover {
+    color: rgb(209, 209, 255);
+}
+
+.smallMenu>li {
+    font-size: 0.7em;
+    line-height: 50px;
+    /* list-style: none; */
+}
+
+.contents {
+    display: flex;
+    padding: 30px;
+}
