@@ -1,0 +1,62 @@
+[
+    {
+        "name": "backend-deploy-85cc9bb86-g2g86",
+        "namespace": "default",
+        "podIP": "10.244.2.94",
+        "status": "Running",
+        "serviceConnected": true,
+        "restarts": 0,
+        "usageCpu": 0,
+        "usageMemory": 0
+    },
+    {
+        "name": "backend-deploy-85cc9bb86-gfvqv",
+        "namespace": "default",
+        "podIP": "10.244.1.6",
+        "status": "Running",
+        "serviceConnected": true,
+        "restarts": 0,
+        "usageCpu": 0,
+        "usageMemory": 0
+    },
+    {
+        "name": "mongodb-74dc9bd994-hpqbn",
+        "namespace": "default",
+        "podIP": "10.244.2.71",
+        "status": "Running",
+        "serviceConnected": true,
+        "restarts": 0,
+        "usageCpu": 0,
+        "usageMemory": 0
+    },
+    {
+        "name": "mysql-deployment-54b8f7fd8-gh4c8",
+        "namespace": "default",
+        "podIP": "10.244.2.2",
+        "status": "Running",
+        "serviceConnected": true,
+        "restarts": 0,
+        "usageCpu": 0,
+        "usageMemory": 0
+    },
+    {
+        "name": "spring-boot-deployment-75d84ff757-4wjpd",
+        "namespace": "default",
+        "podIP": "10.244.1.2",
+        "status": "Running",
+        "serviceConnected": true,
+        "restarts": 0,
+        "usageCpu": 0,
+        "usageMemory": 0
+    },
+    {
+        "name": "spring-boot-deployment-75d84ff757-s2xtb",
+        "namespace": "default",
+        "podIP": "10.244.2.3",
+        "status": "Running",
+        "serviceConnected": true,
+        "restarts": 0,
+        "usageCpu": 0,
+        "usageMemory": 0
+    }
+]

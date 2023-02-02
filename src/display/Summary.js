@@ -1,6 +1,6 @@
 import BarChart from "../components/BarChart"
 import PieChart from "../components/PieChart"
-import LineChart from "../components/LineChart"
+import LineChart from "../components/CustomChart"
 
 import styles from "./css/Summary.module.css"
 

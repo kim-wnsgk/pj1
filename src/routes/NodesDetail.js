@@ -4,7 +4,9 @@ import { RxDividerVertical } from "react-icons/rx"
 import { FaRegUser } from "react-icons/fa"
 import { AiOutlineMenu } from "react-icons/ai"
 
+import Summary from "../display/Summary"
 import NodesDisplay from "../display/NodesDisplay.js"
+import NodeDetailDisplay from "../display/NodeDetailDisplay"
 
 import { useEffect, useState } from "react"
 // import styled from "styled-components";
@@ -13,7 +15,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { changeMenuAction } from '../store';
 import { Link } from "react-router-dom"
 
-function Nodes() {
+function NodesDetail() {
     const arr = useSelector(state => state)
     const dispatch = useDispatch();
 
@@ -35,7 +37,7 @@ function Nodes() {
             {/* <StyledBanner> */}
             <div className={styles.banner}>
                 <div className={styles.title}>
-                    <Link to="/"><img alt="title" src="assets/img/logo.png" /></Link>
+                    <Link to="/"><img alt="title" src="../../assets/img/logo.png" /></Link>
                 </div>
                 <div className={styles.topBar}>
                     <input className={styles.search}
@@ -60,7 +62,7 @@ function Nodes() {
                     onClick={() => { isopen ? setIsopen(false) : setIsopen(true) }}
                     style={{ cursor: 'pointer' }}
                 />
-                <div className={styles.menuName}>{arr.menu.map((str) => (" > " + `${str}`))}</div>
+                <div className={styles.menuName}>Nodes</div>
             </div>
             <div className={styles.container} /*onWheel={handleOnWheel}*/>
                 {isopen ? (
@@ -69,14 +71,14 @@ function Nodes() {
                             <li>
                                 <div>Overview</div>
                                 <ul className={styles.smallMenu}>
-                                    <li onClick={() => changeMenu(["Overview", "Summary"])}><Link to="/overview/summary">Summary</Link></li>
+                                    <li onClick={() => changeMenu(["Overview", "Summary"])}><Link to="/overview/summary" className={styles.link}>Summary</Link></li>
                                     <li onClick={() => changeMenu(["Overview", "Custom view"])}>Custom view</li>
                                 </ul>
                             </li>
                             <li>Alerts</li>
                             <li>
                                 <div onClick={() => changeMenu(["Nodes"])}>
-                                    Nodes
+                                    <Link to='/nodes' className={styles.link}>Nodes</Link>
                                 </div>
                             </li>
                             <li>
@@ -103,11 +105,11 @@ function Nodes() {
                 ) : null}
 
                 <div className={styles.contents}>
-                    <NodesDisplay />
+                    <NodeDetailDisplay />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Nodes;
+export default NodesDetail;

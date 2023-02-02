@@ -1,0 +1,43 @@
+.container {
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.row {
+    display: flex;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: 1px dashed grey;
+}
+
+.row:first-child {
+    font-weight: bold;
+    border-bottom: 0;
+}
+
+.row:last-child {
+    border-bottom: 0;
+}
+
+.name {
+    flex: 1.3;
+}
+
+.cpu {
+    flex: 1;
+}
+
+.ram {
+    flex: 1;
+}
+
+.status {
+    flex: 1;
+}
+
+.ip {
+    flex: 1.5;
+    margin-right: 10px;
+}

@@ -6,7 +6,7 @@ import { AiOutlineMenu } from "react-icons/ai"
 
 import Summary from "../display/Summary"
 import NodesDisplay from "../display/NodesDisplay.js"
-import NodeDetail from "../display/NodeDetail"
+import NodeDetail from "../display/NodeDetailDisplay"
 
 import { useEffect, useState } from "react"
 // import styled from "styled-components";

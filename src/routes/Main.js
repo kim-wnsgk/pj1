@@ -4,9 +4,6 @@ import { RxDividerVertical } from "react-icons/rx"
 import { FaRegUser } from "react-icons/fa"
 import { AiOutlineMenu } from "react-icons/ai"
 
-import Summary from "../display/Summary"
-import NodesDisplay from "../display/NodesDisplay.js"
-import NodeDetail from "../display/NodeDetail"
 
 import { useEffect, useState } from "react"
 // import styled from "styled-components";
@@ -26,7 +23,7 @@ function Main() {
     // const [scroll, setScroll] = useState(`100px`);
     const [menu, setMenu] = useState(["Overview", "Summary"]);
     const [text, setText] = useState("");
-    const [isopen, setIsopen] = useState(false);
+    const [isopen, setIsopen] = useState(true);
 
     const search = (txt) => {
         setText(txt.target.value);
@@ -62,7 +59,7 @@ function Main() {
                     onClick={() => { isopen ? setIsopen(false) : setIsopen(true) }}
                     style={{ cursor: 'pointer' }}
                 />
-                <div className={styles.menuName}>{arr.menu.map((str) => (" > " + `${str}`))}</div>
+                <div className={styles.menuName}>Main</div>
             </div>
             <div className={styles.container} /*onWheel={handleOnWheel}*/>
                 {isopen ? (
@@ -71,20 +68,20 @@ function Main() {
                             <li>
                                 <div>Overview</div>
                                 <ul className={styles.smallMenu}>
-                                    <li onClick={() => changeMenu(["Overview", "Summary"])}><Link to="/overview/summary">Summary</Link></li>
+                                    <li onClick={() => changeMenu(["Overview", "Summary"])}><Link to="/overview/summary" className={styles.link}>Summary</Link></li>
                                     <li onClick={() => changeMenu(["Overview", "Custom view"])}>Custom view</li>
                                 </ul>
                             </li>
                             <li>Alerts</li>
                             <li>
                                 <div onClick={() => changeMenu(["Nodes"])}>
-                                    <Link to='/nodes'>Nodes</Link>
+                                    <Link to='/nodes' className={styles.link}>Nodes</Link>
                                 </div>
                             </li>
                             <li>
                                 <div>Resources</div>
                                 <ul className={styles.smallMenu}>
-                                    <li onClick={() => changeMenu(["Resources", "Pods"])}>Pods</li>
+                                    <li onClick={() => changeMenu(["Resources", "Pods"])}><Link to='/resources/pods' className={styles.link}>Pods</Link></li>
                                     <li onClick={() => changeMenu(["Resources", "Namespaces"])}>Namespaces</li>
                                     <li onClick={() => changeMenu(["Resources", "Volumes"])}>Volumes</li>
                                     <li onClick={() => changeMenu(["Resources", "Services"])}>Services</li>
@@ -105,7 +102,7 @@ function Main() {
                 ) : null}
 
                 <div className={styles.contents}>
-                    <Summary />
+                    main
                 </div>
             </div>
         </div>
